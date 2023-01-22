@@ -8,9 +8,9 @@ document.querySelector("form").addEventListener("submit", function(event) {
     let cryptoCurrencyTo = document.querySelector("select[name='crypto_currency_to']").value;
 
     // API endpoint for crypto-euros conversion with low limits
-    let endpoint = "https://min-api.cryptocompare.com/data/price?fsym="+cryptoCurrencyFrom+"&tsyms="+cryptoCurrencyTo;
+    // let endpoint = "https://min-api.cryptocompare.com/data/price?fsym="+cryptoCurrencyFrom+"&tsyms="+cryptoCurrencyTo;
     // With API key with 100 000 calls
-    // let endpoint = "https://min-api.cryptocompare.com/data/price?fsym="+cryptoCurrencyFrom+"&tsyms="+cryptoCurrencyTo+"&api_key=cd28407f9d7748eade31b680c9f10707d577a6f5f7dd143374c4d5c3d1a7e1fe";
+    let endpoint = "https://min-api.cryptocompare.com/data/price?fsym="+cryptoCurrencyFrom+"&tsyms="+cryptoCurrencyTo+"&api_key=cd28407f9d7748eade31b680c9f10707d577a6f5f7dd143374c4d5c3d1a7e1fe";
 
 
     // Fetch the API data
