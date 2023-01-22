@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Convertisseur Crypto-Euros</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  </head>
+  <body>
+    <div class="container">
+    <h1>Convertisseur Crypto-Euros</h1>
+    <form>
+        <label>
+            Montant : 
+            <input type="text" name="crypto_amount" placeholder="Ex: 1.5">
+        </label>
+        <br>
+        <label>
+            Monnaie de départ :
+            <select name="crypto_currency_from">
+                <option value="EUR">Euros</option>
+                <option value="BTC">Bitcoin</option>
+                <option value="ETH">Ethereum</option>
+            </select>
+        </label>
+        <br>
+        <label>
+            Monnaie de destination :
+            <select name="crypto_currency_to">
+                <option value="EUR">Euros</option>
+                <option value="BTC">Bitcoin</option>
+                <option value="ETH">Ethereum</option>
+            </select>
+        </label>
+        <br>
+        <button type="submit">Convertir</button>
+    </form>
+    <div id="result" class="result"></div>
+    </div>
+    <script src="js/conversion.js"></script>
+  </body>
+</html>

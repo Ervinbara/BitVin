@@ -1,0 +1,52 @@
+/* Utilisez une police de caractères plus jolie */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Appliquez la police de caractères à tout le contenu */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+/* Centrez le formulaire */
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Appliquez des styles de bordure aux éléments de formulaire */
+input,
+select {
+  padding: 12px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Appliquez un style de bouton */
+button[type="submit"] {
+  background-color: #4CAF50; /* Vert */
+  color: white;
+  padding: 14px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Appliquez un style de bouton en cas de survol de la souris */
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Appliquez un style au div de résultat */
+#result {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  text-align: center;
+}
