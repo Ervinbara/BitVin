@@ -1,0 +1,30 @@
+{
+  "name": "bitvin",
+  "version": "1.0.0",
+  "description": "Convertisseur Crypto",
+  "main": "index.js",
+  "scripts": {
+    "test": "run",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ervinbara/BitVin.git"
+  },
+  "keywords": [
+    "git"
+  ],
+  "author": "Ervin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ervinbara/BitVin/issues"
+  },
+  "homepage": "https://github.com/Ervinbara/BitVin#readme",
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}

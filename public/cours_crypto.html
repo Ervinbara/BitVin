@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script type="text/javascript" src="js/cours.js"></script>
+    <style>
+      .chart-container {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+      }
+    </style>
+    <script>
+      async function getCryptoPrices() {
+        try {
+          const symbols = ['BTC', 'ETH', 'XRP', 'LTC'];
+          const promises = symbols.map(async symbol => {
+            const response = await axios.get(`https://min-api.cryptocompare.com/data/price?fsym=${symbol}&tsyms=EUR`);
+            const price = response.data.EUR;
+            return { symbol, price };
+          });
+
+          const prices = await Promise.all(promises);
+          
+          // Create table
+          const table = document.createElement("table");
+          
+          // Create table headers
+          const headers = ["Symbole", "Prix en EUR"];
+          const headerRow = document.createElement("tr");
+          headers.forEach(header => {
+            const th = document.createElement("th");
+            th.innerText = header;
+            headerRow.appendChild(th);
+          });
+          table.appendChild(headerRow);
+          
+          // Add data to table
+          prices.forEach(priceData => {
+            const row = document.createElement("tr");
+            const symbolCell = document.createElement("td");
+            symbolCell.innerText = priceData.symbol;
+            row.appendChild(symbolCell);
+            const priceCell = document.createElement("td");
+            priceCell.innerText = priceData.price;
+            row.appendChild(priceCell);
+            
+            // Add chart container to symbol cell
+            const chartContainer = document.createElement("div");
+            chartContainer.classList.add("chart-container");
+            symbolCell.appendChild(chartContainer);
+            const chartCanvas = document.createElement("canvas");
+            chartContainer.appendChild(chartCanvas);
+            
+            table.appendChild(row);
+            
+            // Create chart
+const ctx = chartCanvas.getContext('2d');
+const chart = new Chart(ctx, {
+type: 'bar',
+data: {
+labels: [priceData.symbol],
+datasets: [{
+label: 'Prix en EUR',
+data: [priceData.price],
+backgroundColor: [
+'rgba(255, 99, 132, 0.2)',
+'rgba(54, 162, 235, 0.2)',
+'rgba(255, 206, 86, 0.2)',
+'rgba(75, 192, 192, 0.2)'
+],
+borderColor: [
+'rgba(255, 99, 132, 1)',
+'rgba(54, 162, 235, 1)',
+'rgba(255, 206, 86, 1)',
+'rgba(75, 192, 192, 1)'
+],
+borderWidth: 1
+}]
+},
+options: {
+scales: {
+yAxes: [{
+ticks: {
+beginAtZero: true
+}
+}]
+}
+}
+});
+});
+} catch (error) {
+console.error(error);
+}
+}
+getCryptoPrices();
+</script>
+  </head>
+  <body>
+    <canvas id="priceChart"></canvas>
+  </body>
+</html>
