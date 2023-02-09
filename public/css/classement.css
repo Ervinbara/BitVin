@@ -1,0 +1,33 @@
+#topAndWorstContainer {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+  
+h2 {
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+  
+ul {
+    list-style: none;
+    padding: 0;
+    width: 40%;
+    margin: 20px;
+    text-align: left;
+    font-size: 18px;
+}
+  
+li {
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+li:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
