@@ -10,7 +10,7 @@ h2 {
     font-weight: bold;
 }
   
-ul {
+#topList ul, #worstList ul{
     list-style: none;
     padding: 0;
     width: 40%;
@@ -19,7 +19,7 @@ ul {
     font-size: 18px;
 }
   
-li {
+#topList li , #worstList li {
     padding: 10px;
     border: 1px solid gray;
     border-radius: 5px;
@@ -27,7 +27,7 @@ li {
     transition: all 0.2s ease-in-out;
 }
 
-li:hover {
+#topList li:hover, #worstList li:hover {
     background-color: lightgray;
     cursor: pointer;
 }
